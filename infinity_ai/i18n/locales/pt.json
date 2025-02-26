@@ -1,0 +1,50 @@
+{
+  "system": {
+    "welcome": "✨ Bem-vindo ao EVA & GUARANI! ✨",
+    "language_changed": "🌍 Idioma alterado para {lang}",
+    "error": "❌ Ocorreu um erro: {error}",
+    "success": "✅ Operação realizada com sucesso!",
+    "processing": "⚡ Processando...",
+    "menu": {
+      "title": "🎮 Menu Principal",
+      "start": "▶️ Iniciar",
+      "settings": "⚙️ Configurações",
+      "help": "❓ Ajuda",
+      "about": "ℹ️ Sobre",
+      "language": "🌍 Idioma"
+    },
+    "game": {
+      "start": "🎮 Iniciando jogo...",
+      "victory": "🏆 Vitória!",
+      "defeat": "💀 Derrota...",
+      "try_again": "🔄 Tentar novamente?",
+      "quotes": {
+        "victory": [
+          "Como diria Kratos: 'Os deuses do Olimpo te abandonaram, agora sua vitória está completa!'",
+          "Como diz Mario: 'Yahoo! Você conseguiu!'",
+          "Como em Dark Souls: 'VITÓRIA ALCANÇADA'"
+        ],
+        "defeat": [
+          "Como em Dark Souls: 'YOU DIED'",
+          "Como diz Yasuo: 'A morte é como o vento...'",
+          "Como em Minecraft: 'Respawn?'"
+        ]
+      }
+    },
+    "settings": {
+      "title": "⚙️ Configurações",
+      "language": "🌍 Idioma",
+      "theme": "🎨 Tema",
+      "sound": "🔊 Som",
+      "notifications": "🔔 Notificações"
+    },
+    "help": {
+      "title": "❓ Ajuda",
+      "commands": "Comandos disponíveis:",
+      "start": "/start - Inicia o bot",
+      "help": "/help - Mostra esta ajuda",
+      "settings": "/settings - Configurações",
+      "language": "/language - Muda o idioma"
+    }
+  }
+}

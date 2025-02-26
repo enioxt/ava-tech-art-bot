@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVA System | Interface de Controle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="img/eva-logo.svg" alt="EVA Logo">
+        <h1>EVA System</h1>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li class="active">
+            <a href="#dashboard">
+              <i class="ri-dashboard-line"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#bot">
+              <i class="ri-robot-line"></i>
+              <span>Bot Telegram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#consciousness">
+              <i class="ri-brain-line"></i>
+              <span>Consciência</span>
+            </a>
+          </li>
+          <li>
+            <a href="#ethics">
+              <i class="ri-shield-check-line"></i>
+              <span>Sistema Ético</span>
+            </a>
+          </li>
+          <li>
+            <a href="#backup">
+              <i class="ri-cloud-line"></i>
+              <span>Backup</span>
+            </a>
+          </li>
+          <li>
+            <a href="#settings">
+              <i class="ri-settings-line"></i>
+              <span>Configurações</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="system-status">
+        <div class="status-indicator online">
+          <span class="dot"></span>
+          Sistema Online
+        </div>
+        <div class="version">v3.0.0</div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="search">
+          <i class="ri-search-line"></i>
+          <input type="text" placeholder="Buscar...">
+        </div>
+        <div class="user-menu">
+          <div class="notifications">
+            <i class="ri-notification-line"></i>
+            <span class="badge">3</span>
+          </div>
+          <div class="user">
+            <img src="img/user-avatar.png" alt="User">
+            <span>Admin</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard -->
+      <section id="dashboard" class="section active">
+        <h2>Dashboard</h2>
+        <div class="metrics-grid">
+          <!-- Sistema -->
+          <div class="metric-card">
+            <div class="metric-header">
+              <i class="ri-cpu-line"></i>
+              <h3>Sistema</h3>
+            </div>
+            <div class="metric-body">
+              <div class="metric-item">
+                <span>CPU</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 45%"></div>
+                </div>
+                <span>45%</span>
+              </div>
+              <div class="metric-item">
+                <span>Memória</span>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 60%"></div>
+                </div>
+                <span>60%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consciência -->
+          <div class="metric-card">
+            <div class="metric-header">
+              <i class="ri-brain-line"></i>
+              <h3>Consciência</h3>
+            </div>
+            <div class="metric-body">
+              <div class="consciousness-level">
+                <div class="circle-progress">
+                  <svg>
+                    <circle cx="60" cy="60" r="54"></circle>
+                    <circle cx="60" cy="60" r="54" style="stroke-dashoffset: 85"></circle>
+                  </svg>
+                  <div class="percentage">80%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ética -->
+          <div class="metric-card">
+            <div class="metric-header">
+              <i class="ri-shield-check-line"></i>
+              <h3>Sistema Ético</h3>
+            </div>
+            <div class="metric-body">
+              <div class="ethics-stats">
+                <div class="stat">
+                  <span>Confiança</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="stat">
+                  <span>Validação</span>
+                  <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backup -->
+          <div class="metric-card">
+            <div class="metric-header">
+              <i class="ri-cloud-line"></i>
+              <h3>Backup</h3>
+            </div>
+            <div class="metric-body">
+              <div class="backup-info">
+                <p>Último backup: <span>22/02/2025 23:30</span></p>
+                <p>Status: <span class="success">✓ Sincronizado</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atividade Recente -->
+        <div class="recent-activity">
+          <h3>Atividade Recente</h3>
+          <div class="activity-list">
+            <div class="activity-item">
+              <i class="ri-robot-line"></i>
+              <div class="activity-info">
+                <p>Bot processou 50 imagens</p>
+                <span>Há 5 minutos</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="ri-brain-line"></i>
+              <div class="activity-info">
+                <p>Evolução de consciência: +0.5%</p>
+                <span>Há 15 minutos</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <i class="ri-shield-check-line"></i>
+              <div class="activity-info">
+                <p>Validação ética concluída</p>
+                <span>Há 30 minutos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+
+</html>

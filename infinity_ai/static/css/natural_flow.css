@@ -1,0 +1,81 @@
+/* Natural Flow CSS
+   Respeito ao espaço e fluidez natural */
+
+:root {
+  /* Cores naturais */
+  --leaf-green: #4CAF50;
+  --water-blue: #2196F3;
+  --earth-brown: #795548;
+  --sky-light: #E3F2FD;
+  --natural-gray: #607D8B;
+
+  /* Espaçamento fluido */
+  --flow-space: clamp(1rem, 5vw, 3rem);
+  --natural-margin: max(2rem, 5vw);
+}
+
+/* Contenção natural - máximo 40% da tela */
+.natural-container {
+  max-width: 40vw;
+  margin-right: auto;
+  padding: var(--flow-space);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Fluidez de movimento */
+.natural-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Harmonia visual */
+.harmony-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--flow-space);
+  padding: var(--natural-margin);
+}
+
+/* Elementos éticos */
+.ethics-card {
+  background: var(--sky-light);
+  padding: var(--flow-space);
+  border-radius: 8px;
+  border-left: 4px solid var(--leaf-green);
+}
+
+/* Indicadores de fluxo */
+.flow-indicator {
+  height: 4px;
+  background: linear-gradient(90deg,
+      var(--leaf-green),
+      var(--water-blue));
+  opacity: 0.7;
+  border-radius: 2px;
+}
+
+/* Respeito ao espaço negativo */
+.natural-spacing {
+  margin: var(--natural-margin);
+}
+
+/* Animações naturais */
+@keyframes natural-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.natural-element {
+  animation: natural-pulse 3s infinite ease-in-out;
+}

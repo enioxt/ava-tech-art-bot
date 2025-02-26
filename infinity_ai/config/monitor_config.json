@@ -1,0 +1,26 @@
+{
+  "connection": {
+    "check_interval": 60,
+    "max_reconnect_attempts": 5,
+    "reconnect_delay": 5,
+    "timeout": 10
+  },
+  "alerts": {
+    "downtime_threshold": 300,
+    "reconnect_threshold": 3,
+    "notify_channels": [
+      "log",
+      "telegram"
+    ]
+  },
+  "metrics": {
+    "history_size": 1000,
+    "save_interval": 3600,
+    "cleanup_interval": 86400
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/connection_monitor.log"
+  }
+}

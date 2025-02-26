@@ -1,0 +1,2 @@
+[console_scripts]
+eva = infinity_ai.run_bot:main

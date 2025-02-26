@@ -1,0 +1,158 @@
+{
+  "version": "1.0.0",
+  "games": {
+    "riddle": {
+      "name": "Enigma de Zelda",
+      "icon": "🗡️",
+      "description": "Resolva enigmas do Templo do Tempo",
+      "difficulty": "Medium",
+      "rewards": {
+        "xp": 100,
+        "item": "📜 Pergaminho da Sabedoria",
+        "description": "Como os pergaminhos de Diablo",
+        "rarity": "Rare"
+      },
+      "references": {
+        "game": "The Legend of Zelda: Ocarina of Time",
+        "character": "Link",
+        "location": "Temple of Time"
+      }
+    },
+    "memory": {
+      "name": "Memória Chrono",
+      "icon": "⏰",
+      "description": "Teste sua memória no Julgamento",
+      "difficulty": "Hard",
+      "rewards": {
+        "xp": 150,
+        "item": "⏰ Relógio do Tempo",
+        "description": "Tipo o relógio de Majora's Mask",
+        "rarity": "Epic"
+      },
+      "references": {
+        "game": "Chrono Trigger",
+        "character": "Crono",
+        "location": "Trial Room"
+      }
+    },
+    "pattern": {
+      "name": "Padrões Portal",
+      "icon": "🎵",
+      "description": "Decore os padrões do Portal",
+      "difficulty": "Easy",
+      "rewards": {
+        "xp": 80,
+        "item": "🎵 Nota Musical",
+        "description": "Lembra as notas de Ocarina of Time",
+        "rarity": "Common"
+      },
+      "references": {
+        "game": "Portal",
+        "character": "GLaDOS",
+        "location": "Test Chamber"
+      }
+    },
+    "quiz": {
+      "name": "Quiz Final Fantasy",
+      "icon": "❓",
+      "description": "Teste seu conhecimento gamer",
+      "difficulty": "Legendary",
+      "rewards": {
+        "xp": 200,
+        "item": "📚 Tomo do Conhecimento",
+        "description": "Como os tomos de Skyrim",
+        "rarity": "Legendary"
+      },
+      "references": {
+        "game": "Final Fantasy VII",
+        "character": "Cloud Strife",
+        "location": "Gold Saucer"
+      }
+    }
+  },
+  "defeat_quotes": [
+    {
+      "text": "YOU DIED",
+      "game": "Dark Souls",
+      "character": "Solaire",
+      "quote": "O sol brilhará novamente!"
+    },
+    {
+      "text": "GAME OVER",
+      "game": "Super Mario",
+      "character": "Mario",
+      "quote": "Wahoo! Try again!"
+    },
+    {
+      "text": "DERROTA",
+      "game": "League of Legends",
+      "character": "Yasuo",
+      "quote": "A morte é como o vento..."
+    },
+    {
+      "text": "WASTED",
+      "game": "GTA V",
+      "character": "Trevor",
+      "quote": "Hora do plano B!"
+    }
+  ],
+  "victory_quotes": [
+    {
+      "text": "VICTORY",
+      "game": "God of War",
+      "character": "Kratos",
+      "quote": "Os deuses do Olimpo te abandonaram!"
+    },
+    {
+      "text": "WINNER",
+      "game": "Street Fighter",
+      "character": "Ryu",
+      "quote": "A jornada é mais importante que a vitória."
+    },
+    {
+      "text": "FLAWLESS VICTORY",
+      "game": "Mortal Kombat",
+      "character": "Scorpion",
+      "quote": "Get over here... and celebrate!"
+    }
+  ],
+  "loading_tips": [
+    {
+      "tip": "Em Dark Souls, a morte é apenas o começo...",
+      "game": "Dark Souls"
+    },
+    {
+      "tip": "Em LoL, farm > kills no early game!",
+      "game": "League of Legends"
+    },
+    {
+      "tip": "O bolo é uma mentira",
+      "game": "Portal"
+    },
+    {
+      "tip": "WOLOLO pode converter unidades",
+      "game": "Age of Empires"
+    },
+    {
+      "tip": "Zerg Rush é uma estratégia válida",
+      "game": "StarCraft"
+    }
+  ],
+  "achievements": {
+    "first_win": {
+      "name": "Primeira Vitória",
+      "description": "Como ganhar seu primeiro Blue Buff no LoL",
+      "icon": "🏆"
+    },
+    "perfect_score": {
+      "name": "Pontuação Perfeita",
+      "description": "Tipo aquele Perfect no Street Fighter",
+      "icon": "✨"
+    },
+    "speed_runner": {
+      "name": "Speed Runner",
+      "description": "Mais rápido que o Sonic!",
+      "icon": "⚡"
+    }
+  }
+}

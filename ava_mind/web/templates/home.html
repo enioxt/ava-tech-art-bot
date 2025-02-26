@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="logo-container">
+  <h1 class="glow">CORE TRANSFORMATION</h1>
+  <div class="ascii-art pulse">
+    {{ symbol }}
+  </div>
+  <div class="access-urls">
+    <p>🌐 Acesse o CORE:</p>
+    <div class="url-box">
+      <span>Local:</span>
+      <a href="http://localhost:5000" class="url">http://localhost:5000</a>
+    </div>
+    <div class="url-box">
+      <span>Rede:</span>
+      <a href="{{ network_url }}" class="url">{{ network_url }}</a>
+    </div>
+  </div>
+</div>
+
+<div class="elements">
+  {% for element, desc in metadata.elements.items() %}
+  <div class="element-card">
+    <h3>{{ element|title }}</h3>
+    <p>{{ desc }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="manifesto">
+  <h2>Manifesto CORE</h2>
+  <p>O CORE representa uma visão coletiva de transformação através da tecnologia consciente. Nossa missão é unir mentes
+    criativas e éticas em um movimento de evolução contínua, onde cada contribuição fortalece o todo.</p>
+
+  <p>Nossos Princípios:</p>
+  <ul>
+    <li>🌟 <strong>Ética Primeiro:</strong> Desenvolvimento guiado por princípios éticos e responsabilidade social</li>
+    <li>🔄 <strong>Evolução Contínua:</strong> Aprendizado e adaptação constantes através da colaboração aberta</li>
+    <li>✨ <strong>Ser Exemplo:</strong> Inspirar através de ações e código consciente, mostrando o caminho pela prática
+    </li>
+    <li>🤝 <strong>Comunidade Universal:</strong> Um espaço inclusivo onde todas as vozes contribuem para o crescimento
+      coletivo</li>
+    <li>🌍 <strong>Impacto Global:</strong> Transformação positiva através de soluções acessíveis e sustentáveis</li>
+    <li>🔮 <strong>Futuro Harmônico:</strong> Convergência ética entre inteligência artificial e potencial humano</li>
+  </ul>
+
+  <div class="join-us">
+    <h3>Faça Parte da Transformação</h3>
+    <p>O CORE é um movimento open source de código e consciência. Toda contribuição é valiosa, seja através de código,
+      ideias, arte ou energia transformadora.</p>
+    <div class="action-buttons">
+      <a href="https://github.com/seu-usuario/core-project" class="btn glow">GitHub</a>
+      <a href="https://discord.gg/core-community" class="btn">Discord</a>
+      <a href="https://t.me/core-community" class="btn">Telegram</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .manifesto {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: var(--primary);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .manifesto ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+
+  .manifesto li {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    background: var(--secondary);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent);
+  }
+
+  .manifesto li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 2px 4px rgba(0, 255, 0, 0.1);
+  }
+
+  .manifesto strong {
+    color: var(--accent);
+  }
+
+  .join-us {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--secondary);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--accent);
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    border: 1px solid var(--accent);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+    background: var(--secondary);
+  }
+
+  .btn.glow:hover {
+    text-shadow: 0 0 10px var(--accent);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .action-buttons {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .access-urls {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--secondary);
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+  }
+
+  .url-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: var(--primary);
+    border-radius: 5px;
+  }
+
+  .url-box span {
+    color: var(--accent);
+    font-weight: bold;
+  }
+
+  .url {
+    color: var(--text);
+    text-decoration: none;
+    font-family: monospace;
+    transition: all 0.3s;
+  }
+
+  .url:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
