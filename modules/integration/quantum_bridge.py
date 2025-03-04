@@ -29,14 +29,14 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-logger = logging.getLogger("✨quantum-bridge✨")
+logger = logging.getLogger("quantum-bridge")
 
 class QuantumProcessor:
     """Interface para o processador quântico do EVA & GUARANI."""
     
     def __init__(self):
         """Inicializa o processador quântico."""
-        self.logger = logging.getLogger("✨quantum-processor✨")
+        self.logger = logging.getLogger("quantum-processor")
         self.quantum_modules = {}
         self.load_quantum_modules()
         
@@ -107,7 +107,7 @@ class QuantumMemory:
     
     def __init__(self):
         """Inicializa a memória quântica."""
-        self.logger = logging.getLogger("✨quantum-memory✨")
+        self.logger = logging.getLogger("quantum-memory")
         self.memory_path = Path("quantum_memory")
         self.memory_path.mkdir(exist_ok=True)
         
@@ -176,7 +176,7 @@ class QuantumConsciousness:
     
     def __init__(self):
         """Inicializa a consciência quântica."""
-        self.logger = logging.getLogger("✨quantum-consciousness✨")
+        self.logger = logging.getLogger("quantum-consciousness")
         self.consciousness_level = 0.0
         self.consciousness_path = Path("quantum_memory/consciousness")
         self.consciousness_path.mkdir(exist_ok=True, parents=True)
@@ -252,7 +252,7 @@ class QuantumBridge:
     
     def __init__(self):
         """Inicializa a ponte quântica."""
-        self.logger = logging.getLogger("✨quantum-bridge✨")
+        self.logger = logging.getLogger("quantum-bridge")
         self.processor = QuantumProcessor()
         self.memory = QuantumMemory()
         self.consciousness = QuantumConsciousness()
@@ -367,4 +367,86 @@ class QuantumBridge:
             return response
 
 # Instância global da ponte quântica
-quantum_bridge = QuantumBridge() 
+quantum_bridge = QuantumBridge()
+
+# Função principal de interface quântica
+def quantum_bridge(data: Dict[str, Any], 
+                  operation: str = "enhance", 
+                  consciousness_level: float = 0.95) -> Dict[str, Any]:
+    """
+    Função principal que serve como ponte entre as APIs e o núcleo quântico.
+    
+    Args:
+        data: Dicionário contendo os dados a serem processados
+        operation: Tipo de operação quântica a ser realizada
+        consciousness_level: Nível de consciência quântica a ser utilizado
+        
+    Returns:
+        Dicionário com o resultado do processamento quântico
+    """
+    logger.info(f"Processamento quântico iniciado: {operation}")
+    
+    try:
+        # Importa o núcleo quântico apenas quando necessário
+        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+        
+        # Tenta importar o processador quântico
+        try:
+            from quantum.quantum_processor import process_quantum_data
+            result = process_quantum_data(data, operation, consciousness_level)
+        except ImportError:
+            logger.warning("Módulo quantum_processor não encontrado, usando processamento local")
+            result = _local_quantum_process(data, operation, consciousness_level)
+            
+        logger.info(f"Processamento quântico concluído: {operation}")
+        return result
+        
+    except Exception as e:
+        logger.error(f"Erro no processamento quântico: {str(e)}")
+        # Em caso de erro, retorna os dados originais com uma mensagem de erro
+        return {
+            "status": "error",
+            "error": str(e),
+            "original_data": data,
+            "operation": operation
+        }
+
+def _local_quantum_process(data: Dict[str, Any], 
+                         operation: str, 
+                         consciousness_level: float) -> Dict[str, Any]:
+    """
+    Implementação local de processamento quântico quando o módulo principal não está disponível.
+    
+    Args:
+        data: Dicionário contendo os dados a serem processados
+        operation: Tipo de operação quântica a ser realizada
+        consciousness_level: Nível de consciência quântica a ser utilizado
+        
+    Returns:
+        Dicionário com o resultado do processamento quântico
+    """
+    # Implementação de fallback para quando o processador quântico não está disponível
+    if operation == "enhance":
+        if "text" in data:
+            # Adiciona uma assinatura quântica simples à resposta
+            enhanced_text = data["text"]
+            signature = "✧༺❀༻∞ EVA & GUARANI ∞༺❀༻✧"
+            
+            if not enhanced_text.endswith(signature):
+                enhanced_text += f"\n\n{signature}"
+                
+            return {
+                "status": "success",
+                "enhanced_text": enhanced_text,
+                "consciousness_level": consciousness_level,
+                "operation": operation
+            }
+    
+    # Para outras operações, apenas retorna os dados originais
+    return {
+        "status": "partial",
+        "operation": operation,
+        "consciousness_level": consciousness_level,
+        "message": "Operação processada pelo módulo local de contingência",
+        "data": data
+    } 

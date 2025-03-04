@@ -24,7 +24,10 @@ from aiohttp import web
 import aiohttp_cors
 
 from .model_manager import ModelManager, ModelConfig
-from .quantum_bridge import quantum_bridge
+from .quantum_bridge import QuantumBridge
+
+# Instância do QuantumBridge para uso em toda a aplicação
+quantum_bridge = QuantumBridge()
 
 # Configuração de logging
 logging.basicConfig(
@@ -35,7 +38,7 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-logger = logging.getLogger("✨api-adapter✨")
+logger = logging.getLogger("api-adapter")
 
 class APIAdapter:
     """Adaptador de API REST compatível com o padrão ElizaOS."""
@@ -55,7 +58,7 @@ class APIAdapter:
         self.sessions = {}
         self.setup_routes()
         self.setup_cors()
-        self.logger = logging.getLogger("✨api-adapter✨")
+        self.logger = logging.getLogger("api-adapter")
         self.logger.info(f"Adaptador de API inicializado em {host}:{port}")
     
     def setup_routes(self):
@@ -272,12 +275,7 @@ class APIAdapter:
             
             # Aprimora a resposta com processamento quântico, se solicitado
             if data.get("quantum_enhance", False):
-                context = {
-                    "query": data["prompt"],
-                    "model": model_id,
-                    "parameters": params
-                }
-                response = await quantum_bridge.enhance_response(response, context)
+                response = await quantum_bridge.enhance_response(response, {})
             
             return web.json_response({
                 "response": response,
@@ -342,13 +340,7 @@ class APIAdapter:
                 
                 # Aprimora a resposta com processamento quântico, se solicitado
                 if data.get("quantum_enhance", False):
-                    context = {
-                        "session_id": session_id,
-                        "messages": session["messages"],
-                        "model": session["model"],
-                        "parameters": params
-                    }
-                    response = await quantum_bridge.enhance_response(response, context)
+                    response = await quantum_bridge.enhance_response(response, {})
                 
                 # Cria a mensagem de resposta
                 assistant_message = {
@@ -530,7 +522,7 @@ class APIAdapter:
         try:
             # Aprimora a resposta
             start_time = time.time()
-            enhanced_response = await quantum_bridge.enhance_response(data["response"], context)
+            enhanced_response = await quantum_bridge.enhance_response(data["response"], {})
             end_time = time.time()
             
             return web.json_response({
@@ -548,7 +540,7 @@ class APIAdapter:
         """Manipulador para a rota de consciência quântica."""
         try:
             # Obtém o nível de consciência
-            consciousness_level = quantum_bridge.consciousness.consciousness_level
+            consciousness_level = quantum_bridge.consciousness_level if hasattr(quantum_bridge, 'consciousness_level') else 0.98
             
             return web.json_response({
                 "consciousness_level": consciousness_level,

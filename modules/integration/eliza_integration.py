@@ -19,7 +19,7 @@ from typing import Dict, List, Any, Optional, Union
 
 # Importa a âncora temporal
 try:
-    from quantum_time_anchor import get_current_time, get_formatted_datetime, get_build_version
+    from quantum.quantum_time_anchor import get_current_time, get_formatted_datetime, get_build_version
 except ImportError:
     print("Erro: Âncora temporal não encontrada. Execute primeiro 'python quantum_time_anchor.py'")
     sys.exit(1)
